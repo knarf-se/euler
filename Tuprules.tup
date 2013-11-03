@@ -1,6 +1,7 @@
-CFLAGS += -O2
+CFLAGS += -g3 -O2
 HSLAGS +=
 
-!cc = |> gcc $(CFLAGS) -o %o -c %f |> %f.elf
+!cc = |> gcc $(CFLAGS) -o %o %f |> %f.elf
+!cx = |> g++ $(CFLAGS) -o %o %f |> %f.elf
 !hs = |> ghc $(HSLAGS) -o %f.elf %f |> %f.elf %B.o %B.hi
 
